@@ -1,7 +1,7 @@
-name: CI 
+name: CI
 on:
   push:
-    branches: ['main']
+    branches: ['master']
   workflow_dispatch: {}
 jobs:
   checkout-test:
@@ -10,5 +10,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - uses: actions/setup-node@v1
-      - run: ./prepare.sh
-      - run: ./test.sh
+      - run: ./.github/scripts/prepare.sh
+      - run: ./.github/scripts/test.sh
